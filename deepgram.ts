@@ -1,0 +1,1 @@
+export function deepgramLiveUrl(){const model=process.env.DEEPGRAM_MODEL||"nova-3";const diarize=process.env.DEEPGRAM_DIARIZE_MODEL||"latest";return `wss://api.deepgram.com/v1/listen?model=${encodeURIComponent(model)}&smart_format=true&interim_results=true&utterances=true&diarize_model=${encodeURIComponent(diarize)}`}

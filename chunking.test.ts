@@ -1,0 +1,1 @@
+import {describe,it,expect} from "vitest";import {chunkTranscript} from "../lib/embeddings";describe("chunkTranscript",()=>{it("preserves source ids",()=>{const x=chunkTranscript([{id:"a",text:"hello"},{id:"b",text:"world"}],20);expect(x[0].sourceIds).toEqual(["a","b"])})});

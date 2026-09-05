@@ -1,0 +1,3 @@
+"use client";
+import {useState} from "react";
+export default function Search(){const[q,setQ]=useState("What did we agree on with Client X?");const[result,setResult]=useState<any>(null);async function run(){const r=await fetch("/api/search",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({question:q,limit:8})});setResult(await r.json())}return <main className="shell"><h1>Search meeting history 🔎</h1><textarea value={q} onChange={e=>setQ(e.target.value)}/><button className="button" onClick={run}>Search</button>{result&&<pre className="card">{JSON.stringify(result,null,2)}</pre>}</main>}

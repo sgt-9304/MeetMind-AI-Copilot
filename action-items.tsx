@@ -1,0 +1,1 @@
+import type {ActionItem} from "@/lib/types";export function ActionItems({items}:{items:ActionItem[]}){return <div className="grid">{items.map((x,i)=><article className="card" key={i}><h3>{x.task}</h3><p>Owner: {x.owner||"Unassigned"}</p><p>Due: {x.dueDate||"Not specified"}</p><span className="pill">{x.reviewStatus}</span></article>)}</div>}

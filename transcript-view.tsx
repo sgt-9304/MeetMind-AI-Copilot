@@ -1,0 +1,1 @@
+import type {TranscriptSegment} from "@/lib/types";export function TranscriptView({segments}:{segments:TranscriptSegment[]}){return <section>{segments.map(s=><div className="transcript" key={s.id}><b>{s.speaker}</b> <span className="muted">{Math.floor(s.start_ms/1000)}s</span><p>{s.text}</p></div>)}</section>}
